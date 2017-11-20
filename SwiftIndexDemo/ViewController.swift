@@ -11,8 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let sections = Model.sections
     let indexes = Model.indexes
-    let result = Model.result
-    var searchResult : [String] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,12 +31,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        var index : Int = 0
+        var indexSection : Int = 0
         for i in sections {
             if i == title {
-                return index
+                return indexSection
             }
-            index += 1
+            indexSection += 1
         }
         return 0
     }
